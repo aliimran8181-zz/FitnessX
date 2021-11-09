@@ -1,0 +1,51 @@
+
+/* Class = "UITextField"; placeholder = "Your Email"; ObjectID = "0RH-g9-pUx"; */
+"0RH-g9-pUx.placeholder" = "Your Email";
+
+/* Class = "UILabel"; text = "Register with email"; ObjectID = "2t9-wU-QPr"; */
+"2t9-wU-QPr.text" = "Register with email";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "92h-r4-AWa"; */
+"92h-r4-AWa.placeholder" = "First Name";
+
+/* Class = "UILabel"; text = "Welcome back"; ObjectID = "985-AO-Ua9"; */
+"985-AO-Ua9.text" = "Welcome back";
+
+/* Class = "UILabel"; text = "By creating account i agree with Switchfit's"; ObjectID = "Baa-nc-cp8"; */
+"Baa-nc-cp8.text" = "By creating account i agree with Switchfit's";
+
+/* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "DF5-cl-zXp"; */
+"DF5-cl-zXp.normalTitle" = "Continue";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "GVV-Wk-cTc"; */
+"GVV-Wk-cTc.placeholder" = "Last Name";
+
+/* Class = "UILabel"; text = "Lets get started"; ObjectID = "Ogt-kC-pzk"; */
+"Ogt-kC-pzk.text" = "Lets get started";
+
+/* Class = "UITextField"; placeholder = "Your Email"; ObjectID = "bOl-XS-2pL"; */
+"bOl-XS-2pL.placeholder" = "Your Email";
+
+/* Class = "UITextField"; placeholder = "Your Password"; ObjectID = "eMR-Aq-UPK"; */
+"eMR-Aq-UPK.placeholder" = "Your Password";
+
+/* Class = "UIButton"; normalTitle = " Login with Facebook"; ObjectID = "ew2-pq-p1f"; */
+"ew2-pq-p1f.normalTitle" = " Login with Facebook";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "fDb-m4-Ziu"; */
+"fDb-m4-Ziu.normalTitle" = "Login";
+
+/* Class = "UIButton"; normalTitle = "I have an account "; ObjectID = "hao-9e-W01"; */
+"hao-9e-W01.normalTitle" = "I have an account ";
+
+/* Class = "UITextField"; placeholder = "Your Password"; ObjectID = "krE-rU-MTf"; */
+"krE-rU-MTf.placeholder" = "Your Password";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "nMH-H1-GFV"; */
+"nMH-H1-GFV.placeholder" = "Confirm Password";
+
+/* Class = "UILabel"; text = "Or"; ObjectID = "q2M-lm-9mp"; */
+"q2M-lm-9mp.text" = "Or";
+
+/* Class = "UIButton"; normalTitle = "I don't have an account"; ObjectID = "zt6-GP-O8s"; */
+"zt6-GP-O8s.normalTitle" = "I don't have an account";
