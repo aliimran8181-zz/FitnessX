@@ -18,7 +18,6 @@ class RegisterVC: UIViewController{
     
     // MARK: Varibales
     var isSelected:Bool = true
-
     
     
     
@@ -83,77 +82,55 @@ class RegisterVC: UIViewController{
     }
    
     @IBAction func ctnButton(_ sender: Any) {
+        let FName = FirstTF.text
+        let LName = LastTF.text
+        let Email = EmailTF.text
+        let Password =  PassTF.text
+        let ConfirmPassword = CPassTF.text
+        let DOB = DOB.text
+        
     
         /* //MARK: Changing the color red & Validations
             i've changed the color of the text feild by using the property bordercolor
             and i've changed the border width to 2.0 for it to be visible
         */
         
-        if FirstTF.text == ""{
-            let myColor : UIColor = UIColor.red
-            FirstTF.layer.borderWidth = 2.0
-              FirstTF.layer.borderColor = myColor.cgColor // Changing the color of the borders of the text feilds
-        }
-        else{
-            let myColor : UIColor = UIColor.white
-            FirstTF.layer.borderWidth = 2.0
-              FirstTF.layer.borderColor = myColor.cgColor
-        }
-        if LastTF.text == ""{
-            let myColor : UIColor = UIColor.red
-            LastTF.layer.borderWidth = 2.0
-            LastTF.layer.borderColor = myColor.cgColor
-        }
-        else{
-            let myColor : UIColor = UIColor.white
-            LastTF.layer.borderWidth = 2.0
-            LastTF.layer.borderColor = myColor.cgColor
-        }
-        if PassTF.text == ""{
-            let myColor : UIColor = UIColor.red
-            PassTF.layer.borderWidth = 2.0
-              PassTF.layer.borderColor = myColor.cgColor
-        }
-        else{
-            let myColor : UIColor = UIColor.white
-            PassTF.layer.borderWidth = 2.0
-              PassTF.layer.borderColor = myColor.cgColor
-        }
-        if CPassTF.text == ""{
-            let myColor : UIColor = UIColor.red
-            CPassTF.layer.borderWidth = 2.0
-            CPassTF.layer.borderColor = myColor.cgColor
-        }
-        else{
-            let myColor : UIColor = UIColor.white
-            CPassTF.layer.borderWidth = 2.0
-            CPassTF.layer.borderColor = myColor.cgColor
-        }
-        if EmailTF.text == ""{
-            let myColor : UIColor = UIColor.red
-            EmailTF.layer.borderWidth = 2.0
-            EmailTF.layer.borderColor = myColor.cgColor
-        }
-        else{
-            let myColor : UIColor = UIColor.white
-            EmailTF.layer.borderWidth = 2.0
-            EmailTF.layer.borderColor = myColor.cgColor
-        }
-        lblValidationMessage.isHidden = true
+        //Check for empty fields
         guard let email = EmailTF.text, EmailTF.text?.count != 0  else {
+                    return
+                }
+                if isValidEmail(emailID: email) == false {
+                   displayMyAlertMessage(userMessage: "Please Enter a valid Email")// vaild email calling
+                }
+        if((FName?.isEmpty)! || (LName?.isEmpty)! || (Email?.isEmpty)! || (Password?.isEmpty)! || (ConfirmPassword?.isEmpty)! ||  (DOB?.isEmpty)! )
+            
+        {
+            //Display alert message
+            displayMyAlertMessage(userMessage: "All fields are required")
             return
         }
-        if isValidEmail(emailID: email) == false {
-            lblValidationMessage.isHidden = false
-            lblValidationMessage.text = "Please enter valid email address" // vaild email calling
+        
+        //Check if passwords match
+        if(PassTF.text != CPassTF.text)
+        {
+            displayMyAlertMessage(userMessage: "Passwords do not match")
+            return
+       }
+        let success: Bool = CoreDataHandler.saveObject(fname: FName!, lname: LName!, email: Email!, password: Password!, dob: DOB!)
+        if success {
+            // success message
+           
+            let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! UIViewController
+        }else{
+            // error msg
+            displayMyAlertMessage(userMessage:"Registration failed")
+            print("Insertion failed")
         }
-   
       
     }
     //MARK: VIEWDIDLOAD
     override func viewDidLoad() {
         showDatePicker()
-        lblValidationMessage.isHidden = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterVC.backgroundTap))
         self.ContentView.addGestureRecognizer(tapGestureRecognizer)
         
@@ -198,5 +175,13 @@ class RegisterVC: UIViewController{
     // it will trigger a keyboardWillHide notification
     self.view.endEditing(true)
 }
-    
+    func displayMyAlertMessage(userMessage:String){
+        let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+            
+            
+        })
+        myAlert.addAction(okAction)
+        self.present(myAlert,animated: true,completion: nil)
+    }
 }

@@ -4,48 +4,52 @@ import UIKit
 class LoginVC: UIViewController {
     
     // MARK: IBOutlets
-    @IBOutlet weak var lblValidationMessage: UILabel!
     @IBOutlet weak var EmailTF: UITextField!
     @IBOutlet weak var PassTF: UITextField!
     
     
+    var user:[User]? = nil
+    
     //MARK: Changing textfeilds Colors
     @IBAction func LoginButtuon(_ sender: Any) {
-        if PassTF.text == "" {
-            let myColor : UIColor = UIColor.red
-            PassTF.layer.borderWidth = 2.0
-              PassTF.layer.borderColor = myColor.cgColor
-        }
-        else{
-            let myColor : UIColor = UIColor.white
-            PassTF.layer.borderWidth = 2.0
-              PassTF.layer.borderColor = myColor.cgColor
-        }
-        if EmailTF.text == ""{
-            let myColor : UIColor = UIColor.red
-            EmailTF.layer.borderWidth = 2.0
-            EmailTF.layer.borderColor = myColor.cgColor
-        }
-        else{
-            let myColor : UIColor = UIColor.white
-            EmailTF.layer.borderWidth = 2.0
-            EmailTF.layer.borderColor = myColor.cgColor
+        let Email = EmailTF.text
+        let Password =  PassTF.text
+        
+        // from userdefault
+        var  EmailStored = UserDefaults.standard.string(forKey: "Email");
+        var  PasswordStored = UserDefaults.standard.string(forKey: "Password");
+        // from coredata
+        
+        user = CoreDataHandler.fetchObject()
+        for i in user! {
+            /* Don't deleted commented code , cause it's a efficient way - starts here */
+            //  print("\(i.fname!),\(i.lname!),\(i.email!), \(i.password!),\(i.confirmPassword!),\(i.gender!),\(i.phoneType!),\(i.dob!)")
+            /* Don't deleted commented code , cause it's a efficient way - ends here */
+            print("\(i.fname!)")
+            print("\(i.lname!)")
+            print("\(i.email!)")
+            print("\(i.dob!)")
+            
+            EmailStored = i.email
+            PasswordStored = i.password
         }
         guard let email = EmailTF.text, EmailTF.text?.count != 0  else {
-            lblValidationMessage.isHidden = false
-            lblValidationMessage.text = "Please enter your email"
-            return
+                    return
+                }
+                if isValidEmail(emailID: email) == false {
+                   displayMyAlertMessage(userMessage: "Please Enter a valid Email")// vaild email calling
+                }
+        if EmailStored == Email && PasswordStored == Password
+        {
+                // Login is Successful & Error
+UserDefaults.standard.set(true,forKey:"isUserLoggedIn")
+                UserDefaults.standard.synchronize()
+            let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "dashboardController") as! UIViewController
+         }else {
+            displayMyAlertMessage(userMessage: "Login failed")
+            print("Login failed")
+
         }
-        if isValidEmail(emailID: email) == false {
-            lblValidationMessage.isHidden = false
-            lblValidationMessage.text = "Please enter valid email address" // Calling Valid Email 
-        }
-        else {
-            lblValidationMessage.isHidden = true
-        }
-        
-       
-        
     }
     //MARK: Email Verification
     func isValidEmail(emailID:String) -> Bool {
@@ -56,9 +60,15 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblValidationMessage.isHidden = true
        
     }
-
+    func displayMyAlertMessage(userMessage:String){
+        let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+      
+        })
+        myAlert.addAction(okAction)
+        self.present(myAlert,animated: true,completion: nil)
+    }
     
 }

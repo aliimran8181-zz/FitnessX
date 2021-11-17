@@ -1,0 +1,6 @@
+framework module Pods_FitnessX_FitnessXUITests {
+  umbrella header "Pods-FitnessX-FitnessXUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
