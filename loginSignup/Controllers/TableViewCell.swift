@@ -9,6 +9,13 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var fname: UILabel!
+    
+    @IBOutlet weak var lname: UILabel!
+    
+    @IBOutlet weak var email: UILabel!
+    
+    @IBOutlet weak var dob: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

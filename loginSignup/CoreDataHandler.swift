@@ -1,44 +1,35 @@
 //
-//  CoreDataHandler.swift
-//  FitnessX
+//  RegisterEmployeeManager.swift
+//  loginAndSignin
 //
-//  Created by Ali on 17/11/2021.
+//  Created by Sufyan Arif on 22/11/2021.
 //
 
 import Foundation
-import UIKit
 import CoreData
-class CoreDataHandler: NSObject {
-    private class func getContext() -> NSManagedObjectContext{
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.persistentContainer.viewContext
+
+struct EmployeeManager
+{
+    private let _employeeDataRepository = EmployeeDataRepository()
+
+    func createEmployee(employee: Employee) {
+        _employeeDataRepository.create(employee: employee)
     }
-    class func saveObject(fname:String,lname:String,email:String,password:String,dob:String) -> Bool{
-        let context = getContext()
-        let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
-        let manageObject = NSManagedObject(entity: entity!, insertInto: context)
-        manageObject.setValue(fname, forKey: "fname")
-        manageObject.setValue(lname, forKey: "lname")
-        manageObject.setValue(email, forKey: "email")
-        manageObject.setValue(password, forKey: "password")
-        manageObject.setValue(dob, forKey: "dob")
-        
-        
-        do {
-            try context.save()
-            return true
-        }catch{
-            return false
-        }
+
+    func fetchEmployee() -> [Employee]? {
+        return _employeeDataRepository.getAll()
     }
-    class func fetchObject() -> [User]?{
-        let context =  getContext()
-        var user:[User]? = nil
-        do{
-            user = try context.fetch(User.fetchRequest())
-            return user
-        }catch{
-            return user
-        }
+
+    func fetchEmployee(byIdentifier id: UUID) -> Employee?
+    {
+        return _employeeDataRepository.get(byIdentifier: id)
+    }
+
+    func updateEmployee(employee: Employee) -> Bool {
+        return _employeeDataRepository.update(employee: employee)
+    }
+
+    func deleteEmployee(id: UUID) -> Bool {
+        return _employeeDataRepository.delete(id: id)
     }
 }

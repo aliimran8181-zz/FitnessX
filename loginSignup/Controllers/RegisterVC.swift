@@ -14,7 +14,8 @@ class RegisterVC: UIViewController{
     @IBOutlet weak var DOB: UITextField!
     @IBOutlet weak var ScrollView: UIScrollView!
     @IBOutlet weak var agreeBtn: UIButton!
-    
+    var user:[Employee]? = nil
+    private let CoreDataHandler = EmployeeManager()
     
     // MARK: Varibales
     var isSelected:Bool = true
@@ -82,12 +83,15 @@ class RegisterVC: UIViewController{
     }
    
     @IBAction func ctnButton(_ sender: Any) {
+        let employee = Employee(fname: FirstTF.text, lname: LastTF.text, email: EmailTF.text, dob: DOB.text, password: PassTF.text, id: UUID())
+
         let FName = FirstTF.text
         let LName = LastTF.text
         let Email = EmailTF.text
         let Password =  PassTF.text
         let ConfirmPassword = CPassTF.text
         let DOB = DOB.text
+        var  EmailStored = UserDefaults.standard.string(forKey: "Email");
         
     
         /* //MARK: Changing the color red & Validations
@@ -102,7 +106,7 @@ class RegisterVC: UIViewController{
                 if isValidEmail(emailID: email) == false {
                    displayMyAlertMessage(userMessage: "Please Enter a valid Email")// vaild email calling
                 }
-        if((FName?.isEmpty)! || (LName?.isEmpty)! || (Email?.isEmpty)! || (Password?.isEmpty)! || (ConfirmPassword?.isEmpty)! ||  (DOB?.isEmpty)! )
+        if((FName?.isEmpty)! || (LName?.isEmpty)! || (Email?.isEmpty)! || (Password?.isEmpty)! || (ConfirmPassword?.isEmpty)! ||  (DOB?.isEmpty)!  )
             
         {
             //Display alert message
@@ -116,16 +120,16 @@ class RegisterVC: UIViewController{
             displayMyAlertMessage(userMessage: "Passwords do not match")
             return
        }
-        let success: Bool = CoreDataHandler.saveObject(fname: FName!, lname: LName!, email: Email!, password: Password!, dob: DOB!)
-        if success {
-            // success message
-           
-            let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! UIViewController
-        }else{
-            // error msg
-            displayMyAlertMessage(userMessage:"Registration failed")
-            print("Insertion failed")
+        user = CoreDataHandler.fetchEmployee()
+        for i in user! {
+            
+            EmailStored = i.email
         }
+        if (EmailStored == email){
+            displayMyAlertMessage(userMessage: "Email has already Registered")
+        }
+        self.CoreDataHandler.createEmployee(employee: employee)
+        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! UIViewController
       
     }
     //MARK: VIEWDIDLOAD
@@ -184,4 +188,19 @@ class RegisterVC: UIViewController{
         myAlert.addAction(okAction)
         self.present(myAlert,animated: true,completion: nil)
     }
+    
+    func popUPAleart(
+        title:String,
+        message:String,
+        actionTitle:[String],
+        actionStyles:[UIAlertAction.Style],
+        action:[((UIAlertAction) -> Void)]){
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            for(index,title) in actionTitle.enumerated(){
+                let action = UIAlertAction(title: title, style: actionStyles[index], handler: action[index])
+                alert.addAction(action)
+            }
+            self.present(alert, animated: true, completion: nil)
+    }
+    
 }

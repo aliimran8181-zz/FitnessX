@@ -32,9 +32,17 @@
 		41A7220F2733EE67005A2295 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A7220C2733EE66005A2295 /* RegisterVC.swift */; };
 		B3C6A026421212C697505495 /* Pods_FitnessX_FitnessXUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5825FCAE8567F760F9E7158 /* Pods_FitnessX_FitnessXUITests.framework */; };
 		C571E6E7E721DF8D8AF55ACD /* Pods_FitnessXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DFB00B4AA7A217BE489B3EB /* Pods_FitnessXTests.framework */; };
+		CF3BE1A6274D5395000B0503 /* ForgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3BE1A5274D5395000B0503 /* ForgetViewController.swift */; };
+		CF3DB428274E0A45009C7230 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3DB426274E0A45009C7230 /* User+CoreDataProperties.swift */; };
+		CF3DB429274E0A45009C7230 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3DB427274E0A45009C7230 /* User+CoreDataClass.swift */; };
+		CF3DB42B274E131C009C7230 /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3DB42A274E131C009C7230 /* PersistentStorage.swift */; };
+		CF3DB42E274E13CA009C7230 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3DB42D274E13CA009C7230 /* Employee.swift */; };
 		CF3E26B227450EF000EBBD26 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF3E26B027450EEF00EBBD26 /* Model.xcdatamodeld */; };
 		CF42350327456B5B007D49E8 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF42350227456B5B007D49E8 /* CoreDataHandler.swift */; };
 		CF4235052745828F007D49E8 /* dashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4235042745828F007D49E8 /* dashboardController.swift */; };
+		CF8A2940274CECB800C0939E /* UpdateDeleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8A293F274CECB800C0939E /* UpdateDeleteVC.swift */; };
+		CF8A2943274CEEBB00C0939E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8A2942274CEEBB00C0939E /* Constants.swift */; };
+		CF8A2945274D0DD200C0939E /* employeeDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8A2944274D0DD100C0939E /* employeeDataRepository.swift */; };
 		CFF37C0527459FB4009EAAED /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF37C0427459FB4009EAAED /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,9 +88,17 @@
 		94D2C614342BB27A18E6A53E /* Pods-FitnessX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessX.release.xcconfig"; path = "Target Support Files/Pods-FitnessX/Pods-FitnessX.release.xcconfig"; sourceTree = "<group>"; };
 		B9379994DFB335DD35C3A731 /* Pods-FitnessXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessXTests.debug.xcconfig"; path = "Target Support Files/Pods-FitnessXTests/Pods-FitnessXTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA2DA6DB15C275DE18F21AB8 /* Pods-FitnessX-FitnessXUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessX-FitnessXUITests.release.xcconfig"; path = "Target Support Files/Pods-FitnessX-FitnessXUITests/Pods-FitnessX-FitnessXUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CF3BE1A5274D5395000B0503 /* ForgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetViewController.swift; sourceTree = "<group>"; };
+		CF3DB426274E0A45009C7230 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "CoreDataSupport/User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		CF3DB427274E0A45009C7230 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "CoreDataSupport/User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		CF3DB42A274E131C009C7230 /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
+		CF3DB42D274E13CA009C7230 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		CF3E26B127450EF000EBBD26 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		CF42350227456B5B007D49E8 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		CF4235042745828F007D49E8 /* dashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboardController.swift; sourceTree = "<group>"; };
+		CF8A293F274CECB800C0939E /* UpdateDeleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeleteVC.swift; sourceTree = "<group>"; };
+		CF8A2942274CEEBB00C0939E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CF8A2944274D0DD100C0939E /* employeeDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = employeeDataRepository.swift; sourceTree = "<group>"; };
 		CFF37C0427459FB4009EAAED /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F5825FCAE8567F760F9E7158 /* Pods_FitnessX_FitnessXUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitnessX_FitnessXUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,6 +134,7 @@
 		41A6D63A2733B8010060226F = {
 			isa = PBXGroup;
 			children = (
+				CF3DB42C274E13B6009C7230 /* Models */,
 				41A6D6452733B8010060226F /* loginSignup */,
 				41A6D65C2733B8070060226F /* loginSignupTests */,
 				41A6D6662733B8070060226F /* loginSignupUITests */,
@@ -140,19 +157,20 @@
 		41A6D6452733B8010060226F /* loginSignup */ = {
 			isa = PBXGroup;
 			children = (
+				CF3DB427274E0A45009C7230 /* User+CoreDataClass.swift */,
+				CF3DB426274E0A45009C7230 /* User+CoreDataProperties.swift */,
+				CF3DB42A274E131C009C7230 /* PersistentStorage.swift */,
+				CF8A2941274CECC000C0939E /* Controllers */,
 				41BF42CB2738F85D0088BFE3 /* Views */,
 				41A6D6762733BCF00060226F /* Logo.gif */,
 				41A6D6462733B8010060226F /* AppDelegate.swift */,
 				41A6D6482733B8010060226F /* SceneDelegate.swift */,
-				41A6D64A2733B8010060226F /* ViewController.swift */,
-				41A7220C2733EE66005A2295 /* RegisterVC.swift */,
-				4155B5B027346894002DCCB3 /* LoginVC.swift */,
-				CF4235042745828F007D49E8 /* dashboardController.swift */,
+				CF42350227456B5B007D49E8 /* CoreDataHandler.swift */,
 				41A722042733E3F6005A2295 /* Assets.xcassets */,
 				CF3E26B027450EEF00EBBD26 /* Model.xcdatamodeld */,
 				41A6D6542733B8060060226F /* Info.plist */,
-				CF42350227456B5B007D49E8 /* CoreDataHandler.swift */,
-				CFF37C0427459FB4009EAAED /* TableViewCell.swift */,
+				CF8A2942274CEEBB00C0939E /* Constants.swift */,
+				CF8A2944274D0DD100C0939E /* employeeDataRepository.swift */,
 			);
 			path = loginSignup;
 			sourceTree = "<group>";
@@ -191,6 +209,28 @@
 				1DFB00B4AA7A217BE489B3EB /* Pods_FitnessXTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF3DB42C274E13B6009C7230 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF3DB42D274E13CA009C7230 /* Employee.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CF8A2941274CECC000C0939E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFF37C0427459FB4009EAAED /* TableViewCell.swift */,
+				41A6D64A2733B8010060226F /* ViewController.swift */,
+				41A7220C2733EE66005A2295 /* RegisterVC.swift */,
+				4155B5B027346894002DCCB3 /* LoginVC.swift */,
+				CF4235042745828F007D49E8 /* dashboardController.swift */,
+				CF8A293F274CECB800C0939E /* UpdateDeleteVC.swift */,
+				CF3BE1A5274D5395000B0503 /* ForgetViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		D8379000B5289F87C60C8A4B /* Pods */ = {
@@ -435,14 +475,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF4235052745828F007D49E8 /* dashboardController.swift in Sources */,
+				CF8A2943274CEEBB00C0939E /* Constants.swift in Sources */,
 				CF42350327456B5B007D49E8 /* CoreDataHandler.swift in Sources */,
+				CF8A2940274CECB800C0939E /* UpdateDeleteVC.swift in Sources */,
 				41A6D64B2733B8010060226F /* ViewController.swift in Sources */,
 				CFF37C0527459FB4009EAAED /* TableViewCell.swift in Sources */,
 				41A7220D2733EE67005A2295 /* RegisterVC.swift in Sources */,
 				41A6D6472733B8010060226F /* AppDelegate.swift in Sources */,
+				CF3DB42B274E131C009C7230 /* PersistentStorage.swift in Sources */,
 				41A6D6492733B8010060226F /* SceneDelegate.swift in Sources */,
+				CF3BE1A6274D5395000B0503 /* ForgetViewController.swift in Sources */,
+				CF3DB42E274E13CA009C7230 /* Employee.swift in Sources */,
+				CF3DB428274E0A45009C7230 /* User+CoreDataProperties.swift in Sources */,
+				CF8A2945274D0DD200C0939E /* employeeDataRepository.swift in Sources */,
 				4155B5B127346895002DCCB3 /* LoginVC.swift in Sources */,
 				CF3E26B227450EF000EBBD26 /* Model.xcdatamodeld in Sources */,
+				CF3DB429274E0A45009C7230 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
